@@ -10,12 +10,20 @@ public class FP01Structured {
     }
 
     public static void printAllNumbersInListStructured(List<Integer> list){
-        list.stream().forEach(System.out::println);
-    }
-
-    public static void printAllNumbersInListFunctional(List<Integer> list){
         for (Integer number : list) {
             System.out.println(number);
         }
+    }
+
+    public static boolean isEven (int number) {
+        return number % 2 == 0;
+    }
+
+    public static void printEvenNumbersInListFunctional(List<Integer> list){
+        list.stream().filter(FP01Structured::isEven).forEach(System.out::println);
+    }
+
+    public static void printAllNumbersInListFunctional(List<Integer> list){
+        list.stream().forEach(System.out::println);
     }
 }
