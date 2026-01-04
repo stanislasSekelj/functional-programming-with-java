@@ -10,8 +10,8 @@ public class FP01Structured {
         List<String> courses = List.of("Spring","Spring Boot","API","Microservices","AWS","Azure", "Docker", "Kubernetes");
         //printAllNumbersInListStructured(numbers);
         //printEvenNumbersInListFunctional(numbers);
-        //printOddNumbersInListFunctional(numbers);
-        printCoursesInListFunctional(courses);
+        printOddNumbersInListFunctional(numbers);
+        //printCoursesInListFunctional(courses);
     }
 
     public static void printAllNumbersInListStructured(List<Integer> list){
@@ -27,7 +27,7 @@ public class FP01Structured {
     }
 
     public static void printOddNumbersInListFunctional(List<Integer> list){
-        list.stream().filter(number -> !(number % 2 == 0)).forEach(System.out::println);
+        list.stream().filter(number -> !(number % 2 == 0)).map(number -> number * number).forEach(System.out::println);
     }
 
     public static void printAllNumbersInListFunctional(List<Integer> list){
