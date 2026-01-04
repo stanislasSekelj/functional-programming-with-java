@@ -10,8 +10,9 @@ public class FP01Structured {
         List<String> courses = List.of("Spring","Spring Boot","API","Microservices","AWS","Azure", "Docker", "Kubernetes");
         //printAllNumbersInListStructured(numbers);
         //printEvenNumbersInListFunctional(numbers);
-        printOddNumbersInListFunctional(numbers);
+        //printOddNumbersInListFunctional(numbers);
         //printCoursesInListFunctional(courses);
+        printSumOfAllNumbersInListFunctional(numbers);
     }
 
     public static void printAllNumbersInListStructured(List<Integer> list){
@@ -32,5 +33,9 @@ public class FP01Structured {
 
     public static void printAllNumbersInListFunctional(List<Integer> list){
         list.stream().forEach(System.out::println);
+    }
+
+    public static void printSumOfAllNumbersInListFunctional(List<Integer> list){
+        list.stream().reduce((a, b) -> a + b).ifPresent(System.out::println);
     }
 }
