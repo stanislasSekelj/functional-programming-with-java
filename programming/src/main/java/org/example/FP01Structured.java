@@ -12,7 +12,8 @@ public class FP01Structured {
         //printEvenNumbersInListFunctional(numbers);
         //printOddNumbersInListFunctional(numbers);
         //printCoursesInListFunctional(courses);
-        printSumOfAllNumbersInListFunctional(numbers);
+        //printSumOfAllNumbersInListFunctional(numbers);
+        System.out.println(printSumOfAllSquaredNumbersInListFunctional(numbers));
     }
 
     public static void printAllNumbersInListStructured(List<Integer> list){
@@ -37,5 +38,11 @@ public class FP01Structured {
 
     public static void printSumOfAllNumbersInListFunctional(List<Integer> list){
         list.stream().reduce((a, b) -> a + b).ifPresent(System.out::println);
+    }
+
+    public static Integer printSumOfAllSquaredNumbersInListFunctional(List<Integer> list){
+        //return list.stream().reduce(0, (a, b) -> a + (b*b));
+        //return list.stream().map(number -> number * number).reduce((a, b) -> a + b);
+        return list.stream().mapToInt(number -> number * number).sum();
     }
 }
