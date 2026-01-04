@@ -23,7 +23,7 @@ public class FP01Structured {
     }
 
     public static void printCoursesInListFunctional(List<String> list){
-        list.stream().filter(course -> course.length() > 4).forEach(System.out::println);
+        list.stream().map(course -> course + " Expert" ).forEach(System.out::println);
     }
 
     public static void printOddNumbersInListFunctional(List<Integer> list){
